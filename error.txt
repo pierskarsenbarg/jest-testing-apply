@@ -1,0 +1,20 @@
+> test
+> jest
+
+/Users/piers/go/src/github.com/pierskarsenbarg/scratchpad/jest-testing-apply/node_modules/@pulumi/pulumi/output.js:17
+    return new (P || (P = Promise))(function (resolve, reject) {
+           ^
+<ref *1> Error: invalid length
+    at /Users/piers/go/src/github.com/pierskarsenbarg/scratchpad/jest-testing-apply/RandomPassword.ts:19:23
+    at /Users/piers/go/src/github.com/pierskarsenbarg/scratchpad/jest-testing-apply/node_modules/@pulumi/output.ts:402:31
+    at Generator.next (<anonymous>)
+    at /Users/piers/go/src/github.com/pierskarsenbarg/scratchpad/jest-testing-apply/node_modules/@pulumi/pulumi/output.js:21:71
+    at new Promise (<anonymous>)
+    at Object.<anonymous>.__awaiter (/Users/piers/go/src/github.com/pierskarsenbarg/scratchpad/jest-testing-apply/node_modules/@pulumi/pulumi/output.js:17:12)
+    at applyHelperAsync (/Users/piers/go/src/github.com/pierskarsenbarg/scratchpad/jest-testing-apply/node_modules/@pulumi/pulumi/output.js:244:12)
+    at /Users/piers/go/src/github.com/pierskarsenbarg/scratchpad/jest-testing-apply/node_modules/@pulumi/output.ts:316:13
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  promise: Promise { <rejected> [Circular *1] }
+}
+
+ RUNS  ./index.spec.ts

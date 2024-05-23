@@ -29,17 +29,16 @@ export class RandomPassword extends pulumi.ComponentResource<RandomPasswordData>
     }): Promise<any> {
         const { name, args } = props;
 
-        const passwordLength = pulumi.output(args.length);
-
-        passwordLength.apply(length => {
-            console.log(`length: ${length}`)
+        const pwlength = pulumi.output(args.length).apply(length => {
             if (length <= 1) {
                 throw new Error("invalid length")
             }
+
+            return length;
         })
 
         const generatedPassword = new random.RandomPassword(name, {
-            length: args.length
+            length: pwlength
         }, {parent: this});
 
         return {
